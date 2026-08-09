@@ -1,0 +1,8 @@
+NAME: Synonym Candidate
+EMAIL: synonym@example.com
+PHONE: 2222222222
+EXPERIENCE_YEARS: 2
+EDUCATION: BTech Computer Science
+SKILLS: JAVA, dsa, aws
+PROJECTS: Used AWS and DSA concepts extensively in Java backend services.
+SUMMARY: Backend developer.

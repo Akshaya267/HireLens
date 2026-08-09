@@ -1,0 +1,8 @@
+NAME: Priya Sharma
+EMAIL: priya.sharma@example.com
+PHONE: 9876543211
+EXPERIENCE_YEARS: 1
+EDUCATION: B.Tech Computer Science, ABC Engineering College, 2026
+SKILLS: Python, SQL, Git, MySQL, HTML, CSS, JavaScript, Flask, Database Management
+PROJECTS: Developed an online book store using Python, Flask and MySQL. Created web application features and database modules.
+SUMMARY: Python developer interested in web development and database applications.

@@ -1,0 +1,8 @@
+NAME: Vishnu Prasad
+EMAIL: vishnu.prasad@example.com
+PHONE: 9876543215
+EXPERIENCE_YEARS: 4
+EDUCATION: B.Tech Computer Science, National Institute of Technology, 2025
+SKILLS: C, C++, Python, Data Structures, Algorithms, SQL, Git, PostgreSQL, Linux, Problem Solving
+PROJECTS: Developed a high performance inventory management system using C++. Implemented optimized data structures, SQL database operations and automated testing.
+SUMMARY: Experienced software engineer specializing in C++, algorithms, database systems and software development.

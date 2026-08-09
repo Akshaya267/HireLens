@@ -1,0 +1,8 @@
+NAME: Ananya Rao
+EMAIL: ananya.rao@example.com
+PHONE: 9876543218
+EXPERIENCE_YEARS: 0
+EDUCATION: B.Des Computer Applications, Creative Arts College, 2026
+SKILLS: HTML, CSS, JavaScript, Figma, UI Design, Canva, Bootstrap
+PROJECTS: Designed a modern portfolio website using HTML and CSS. Created user interface prototypes and responsive layouts using Figma.
+SUMMARY: UI designer with an interest in frontend development and digital product design.

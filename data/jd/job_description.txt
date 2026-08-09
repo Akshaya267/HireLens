@@ -1,0 +1,11 @@
+TITLE: Software Engineer
+
+REQUIRED_SKILLS: C, C++, Python, Data Structures, Algorithms, SQL, Git, Problem Solving
+
+PREFERRED_SKILLS: PostgreSQL, Linux, Database Management, Software Testing
+
+MIN_EXPERIENCE_YEARS: 1
+
+EDUCATION: B.Tech Computer Science, B.Tech Artificial Intelligence and Data Science, B.Tech Information Technology
+
+KEYWORDS: software development, problem solving, database, version control, debugging, testing

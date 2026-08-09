@@ -1,0 +1,8 @@
+NAME: No Skills Candidate
+EMAIL: noskills@example.com
+PHONE: 1111111111
+EXPERIENCE_YEARS: 4
+EDUCATION: B.Tech Computer Science
+SKILLS: 
+PROJECTS: Worked on various internal tools.
+SUMMARY: General software contributor.

@@ -1,0 +1,8 @@
+NAME: Sneha Devi
+EMAIL: sneha.devi@example.com
+PHONE: 9876543213
+EXPERIENCE_YEARS: 1
+EDUCATION: B.Sc Computer Science, ABC College, 2026
+SKILLS: Python, JavaScript, React, HTML, CSS, Git, MongoDB
+PROJECTS: Developed a responsive event management website using React and JavaScript. Created frontend components and integrated MongoDB for application data.
+SUMMARY: Frontend developer interested in web applications and user interface development.

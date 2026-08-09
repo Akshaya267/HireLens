@@ -1,0 +1,8 @@
+NAME: Karthik Raj
+EMAIL: karthik.raj@example.com
+PHONE: 9876543212
+EXPERIENCE_YEARS: 1
+EDUCATION: B.Tech Information Technology, XYZ Institute of Technology, 2026
+SKILLS: Python, Java, SQL, Git, HTML, CSS, JavaScript, MySQL
+PROJECTS: Created an online shopping application using Java and MySQL. Developed database queries and implemented basic application features.
+SUMMARY: Software developer with knowledge of programming, SQL and web technologies.

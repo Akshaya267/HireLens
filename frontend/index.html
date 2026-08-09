@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HireLens — Intelligent Resume Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ============ Side Nav (instrument panel) ============ -->
+  <nav class="side-nav">
+    <div class="brand">
+      <span class="brand-mark">
+   <img src="/logo.png" alt="AX Logo" class="ax-logo">
+</span>
+      <div class="brand-text">
+        <strong>HireLens</strong>
+        <small>Resume Analyzer</small>
+      </div>
+    </div>
+
+    <ul class="nav-list">
+      <li><button class="nav-item active" data-view="dashboard"><span class="nav-num">01</span>Dashboard</button></li>
+      <li><button class="nav-item" data-view="jd"><span class="nav-num">02</span>Job Description</button></li>
+      <li><button class="nav-item" data-view="resumes"><span class="nav-num">03</span>Resumes</button></li>
+      <li><button class="nav-item" data-view="analyze"><span class="nav-num">04</span>Analyze</button></li>
+      <li><button class="nav-item" data-view="ranking"><span class="nav-num">05</span>Ranking</button></li>
+      <li><button class="nav-item" data-view="candidate"><span class="nav-num">06</span>Candidate Detail</button></li>
+      <li><button class="nav-item" data-view="export"><span class="nav-num">07</span>Export</button></li>
+    </ul>
+
+    <div class="nav-footer">
+      <div class="engine-status" id="engineStatus">
+        <span class="dot"></span> C Engine Ready
+      </div>
+      <small>Rule-based analysis. No ML/LLM APIs.</small>
+    </div>
+  </nav>
+
+  <!-- ============ Main Content ============ -->
+  <main class="main-view">
+
+    <!-- ---------- Dashboard ---------- -->
+    <section class="view" id="view-dashboard">
+      <header class="view-header">
+        <div>
+          <span class="eyebrow">Overview</span>
+          <h1>Bring every résumé into focus.</h1>
+          <p class="lede">HireLens is a rule-based matching &amp; ranking engine, written in C, that scores candidates against a job description using weighted skill, experience, education, project and keyword analysis — fully explainable, no black-box AI.</p>
+        </div>
+        <div class="hero-gauge" id="heroGauge">
+          <svg viewBox="0 0 160 160" class="gauge-ring">
+            <circle cx="80" cy="80" r="70" class="gauge-track"/>
+            <circle cx="80" cy="80" r="70" class="gauge-fill" id="heroGaugeFill" style="stroke-dasharray: 0 440;"/>
+          </svg>
+          <div class="gauge-label">
+            <span id="heroGaugeValue">—</span>
+            <small>top score</small>
+          </div>
+        </div>
+      </header>
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <span class="stat-value" id="statJD">Not set</span>
+          <span class="stat-label">Job Description</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statResumes">0</span>
+          <span class="stat-label">Resumes Loaded</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statAnalyzed">0</span>
+          <span class="stat-label">Candidates Ranked</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statHighly">0</span>
+          <span class="stat-label">Highly Suitable</span>
+        </div>
+      </div>
+
+      <div class="pipeline-strip">
+        <span class="eyebrow">Pipeline</span>
+        <div class="pipeline-track">
+          <div class="pipeline-node">Input Layer</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-node">Text Preprocessing</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-node">Synonym Mapping</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-node">Matching Engine</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-node">Weighted Scoring</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-node">Ranking</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-node">Explainability</div>
+        </div>
+      </div>
+
+      <div class="quickstart">
+        <button class="btn btn-primary" data-goto="jd">1. Set Job Description</button>
+        <button class="btn btn-primary" data-goto="resumes">2. Add Resumes</button>
+        <button class="btn btn-accent" data-goto="analyze">3. Run Analysis</button>
+      </div>
+    </section>
+
+    <!-- ---------- JD Input ---------- -->
+    <section class="view hidden" id="view-jd">
+      <header class="view-header simple">
+        <div>
+          <span class="eyebrow">Step 02</span>
+          <h1>Job Description</h1>
+          <p class="lede">Define the role using HireLens's structured format so the C engine can parse required vs. preferred skills, experience, education and keywords precisely.</p>
+        </div>
+      </header>
+
+      <div class="panel">
+        <div class="panel-toolbar">
+          <button class="btn btn-ghost" id="loadSampleJD">Load sample JD</button>
+          <input type="file" id="jdFileInput" accept=".txt" hidden />
+          <button class="btn btn-ghost" id="uploadJDBtn">Upload .txt file</button>
+        </div>
+        <textarea id="jdTextarea" class="code-textarea" spellcheck="false" placeholder="TITLE: ...
+REQUIRED_SKILLS: Java, Python, SQL, DSA, DBMS
+PREFERRED_SKILLS: Docker, Kubernetes, AWS, ML
+MIN_EXPERIENCE_YEARS: 2
+EDUCATION: B.Tech Computer Science, BCA
+KEYWORDS: scalable, microservices, agile, teamwork"></textarea>
+        <div class="panel-footer">
+          <span class="hint">Format reference: TITLE, REQUIRED_SKILLS, PREFERRED_SKILLS, MIN_EXPERIENCE_YEARS, EDUCATION, KEYWORDS (comma separated).</span>
+          <button class="btn btn-primary" id="saveJDBtn">Save Job Description</button>
+        </div>
+      </div>
+      <div class="toast" id="jdToast"></div>
+    </section>
+
+    <!-- ---------- Resumes ---------- -->
+    <section class="view hidden" id="view-resumes">
+      <header class="view-header simple">
+        <div>
+          <span class="eyebrow">Step 03</span>
+          <h1>Candidate Resumes</h1>
+          <p class="lede">Upload multiple structured resume .txt files, or load the bundled sample set of five fictional candidates.</p>
+        </div>
+      </header>
+
+      <div class="panel">
+        <div class="panel-toolbar">
+          <button class="btn btn-ghost" id="loadSampleResumes">Load 5 sample resumes</button>
+          <input type="file" id="resumeFileInput" accept=".txt" multiple hidden />
+          <button class="btn btn-ghost" id="uploadResumeBtn">Upload resume .txt file(s)</button>
+          <button class="btn btn-ghost danger" id="clearResumesBtn">Clear all</button>
+        </div>
+        <div class="resume-grid" id="resumeGrid">
+          <p class="empty-state">No resumes loaded yet. Upload files or load the sample set.</p>
+        </div>
+      </div>
+      <div class="toast" id="resumeToast"></div>
+    </section>
+
+    <!-- ---------- Analyze ---------- -->
+    <section class="view hidden" id="view-analyze">
+      <header class="view-header simple">
+        <div>
+          <span class="eyebrow">Step 04</span>
+          <h1>Run Analysis</h1>
+          <p class="lede">This invokes the compiled C engine (<code>bin/hirelens_engine</code>) as a subprocess. All matching, scoring, ranking and explanation happens natively in C.</p>
+        </div>
+      </header>
+
+      <div class="panel analyze-panel">
+        <div class="analyze-summary">
+          <div><strong id="analyzeJDStatus">JD not set</strong><span>Job Description</span></div>
+          <div><strong id="analyzeResumeStatus">0 resumes</strong><span>Candidate Pool</span></div>
+        </div>
+        <button class="btn btn-accent btn-lg" id="runAnalysisBtn">Analyze Candidates</button>
+        <pre class="engine-log" id="engineLog">Engine output will appear here…</pre>
+      </div>
+    </section>
+
+    <!-- ---------- Ranking ---------- -->
+    <section class="view hidden" id="view-ranking">
+      <header class="view-header simple">
+        <div>
+          <span class="eyebrow">Step 05</span>
+          <h1>Candidate Ranking</h1>
+          <p class="lede">Ranked by overall weighted score. Select a row to open the full explainable breakdown.</p>
+        </div>
+      </header>
+
+      <div class="panel">
+        <table class="ranking-table" id="rankingTable">
+          <thead>
+            <tr>
+              <th>Rank</th><th>Candidate</th><th>Overall</th><th>Skills</th><th>Exp.</th><th>Edu.</th><th>Projects</th><th>Keywords</th><th>Status</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="rankingTbody">
+            <tr><td colspan="10" class="empty-state">Run an analysis to see ranked candidates.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---------- Candidate Detail ---------- -->
+    <section class="view hidden" id="view-candidate">
+      <header class="view-header simple">
+        <div>
+          <span class="eyebrow">Step 06</span>
+          <h1>Candidate Analysis</h1>
+          <p class="lede">Explainable, evidence-backed breakdown for a single candidate.</p>
+        </div>
+        <select id="candidateSelect" class="candidate-select"></select>
+      </header>
+
+      <div class="panel" id="candidateDetail">
+        <p class="empty-state">Select a candidate from the ranking table, or choose one above.</p>
+      </div>
+    </section>
+
+    <!-- ---------- Export ---------- -->
+    <section class="view hidden" id="view-export">
+      <header class="view-header simple">
+        <div>
+          <span class="eyebrow">Step 07</span>
+          <h1>Export &amp; Save Report</h1>
+          <p class="lede">Download the full ranking and explainability data generated by the C engine.</p>
+        </div>
+      </header>
+
+      <div class="panel export-panel">
+        <a class="export-card" id="exportReportLink" href="/api/export/report" target="_blank">
+          <strong>report.txt</strong>
+          <span>Human-readable ranked report with strengths, gaps &amp; recommendations for every candidate.</span>
+          <span class="export-cta">Download →</span>
+        </a>
+        <a class="export-card" id="exportJsonLink" href="/api/export/json" target="_blank">
+          <strong>ranking.json</strong>
+          <span>Structured JSON output — every score, matched/missing skill, and explanation, machine readable.</span>
+          <span class="export-cta">Download →</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

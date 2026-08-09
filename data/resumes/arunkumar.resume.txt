@@ -1,0 +1,8 @@
+NAME: Arun Kumar
+EMAIL: arun.kumar@example.com
+PHONE: 9876543210
+EXPERIENCE_YEARS: 2
+EDUCATION: B.Tech Artificial Intelligence and Data Science, National Engineering College, 2026
+SKILLS: C, C++, Python, Data Structures, Algorithms, Git, SQL, PostgreSQL, Database Management
+PROJECTS: Developed a Smart Library Management System using C and C++. Implemented data structures, searching algorithms and PostgreSQL database integration.
+SUMMARY: Software engineering graduate with strong programming and problem-solving skills and experience in software development.
