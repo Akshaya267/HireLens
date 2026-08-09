@@ -1,265 +1,338 @@
 # HireLens — Intelligent Resume Analyzer
 
-> A **rule-based**, explainable resume matching & ranking system with
-> its core intelligence implemented entirely in **C**. Built for a
-> college COE assessment under a strict constraint: **no external
-> packages, no third-party APIs, no online AI/LLM services** — every
-> matching, scoring and ranking decision is made by hand-written C
-> logic using only the standard library.
+> A **rule-based**, explainable resume matching & ranking system with its core intelligence implemented entirely in **C**. No external packages, third-party APIs, or online AI/LLM services are used — every matching, scoring, and ranking decision is made through hand-written C logic using only the standard library.
 
 ---
-
 ## 1. Problem
-
-Reviewing a stack of resumes against a job description by hand is
-slow, inconsistent, and hard to justify to candidates or stakeholders
-("why did we reject this person?"). Recruiters need a way to:
-
-- Compare **many** resumes to **one** job description quickly
-- Get a **defensible, explainable** score, not a gut feeling
-- See exactly **which** requirements were met and which weren't
-- Handle the reality that people describe the same skill differently
-  ("ML" vs "Machine Learning", "DSA" vs "Data Structures")
+Reviewing a stack of resumes against a job description by hand is slow, inconsistent, and difficult to justify ("why did we reject this candidate?"). Recruiters need a way to:
+* Compare **many resumes against one job description**
+* Get a **defensible, explainable score**
+* See exactly **which requirements were met and which were missing**
+* Handle different ways of describing the same skill, such as `"ML"` vs `"Machine Learning"` or `"DSA"` vs `"Data Structures"`
 
 ## 2. Solution
-
-HireLens parses a structured Job Description and a batch of structured
-resumes, then runs them through a **weighted, rule-based matching
-engine written in C**:
-
-- Tokenizes and normalizes text (lowercasing, punctuation cleanup)
-- Maps ~90 common skill/degree abbreviations to canonical forms
-  (synonym mapping)
-- Matches required vs. preferred skills, education, experience and
-  project evidence separately
-- Combines them into one configurable weighted score
-- Ranks all candidates and generates a plain-English explanation —
-  strengths, gaps and a recommendation — for each one
-
-It is **not** an ML or LLM system. It does not "understand" resumes
-semantically. It applies deterministic, inspectable rules — which is
-exactly what makes every score traceable and defensible.
+HireLens parses a structured Job Description and a batch of structured resumes, then processes them through a **weighted, rule-based matching engine written entirely in C**.
+The system:
+* Tokenizes and normalizes text
+* Cleans punctuation and converts text to lowercase
+* Maps ~90 common skill and degree abbreviations to canonical forms
+* Matches required and preferred skills separately
+* Evaluates education and experience
+* Scans project descriptions for relevant evidence
+* Combines multiple components into a configurable weighted score
+* Ranks candidates
+* Generates plain-English explanations containing strengths, gaps, and recommendations
+HireLens is **not an ML or LLM system**. It does not perform semantic understanding of resumes. Instead, it applies deterministic and inspectable rules, making every score and ranking decision traceable.
 
 ## 3. Features
-
-- ✅ Multi-resume batch analysis against one JD
-- ✅ Required vs. preferred skill handling with independent weighting
-- ✅ Synonym/abbreviation mapping (ML, DSA, DBMS, OOP, K8s, AWS, …)
-- ✅ Configurable weighted scoring model (skills/experience/education/
-  projects/keywords)
-- ✅ Experience gating, education-alternatives matching, project
-  evidence scanning, keyword matching
-- ✅ Candidate ranking (stable sort, tie-break by skill then experience)
-- ✅ Full explainability: matched/missing skills, strengths, gaps,
-  synonym-match indicators, and a generated recommendation sentence
-- ✅ Suitability status bands (Highly Suitable / Suitable / Partially
-  Suitable / Not Suitable)
-- ✅ JSON + plain-text report export
-- ✅ A full 7-screen web dashboard (Home, JD input, Resume upload,
-  Analyze, Ranking, Candidate detail, Export)
-- ✅ Automated test suite with structural validation, known-value
-  regression checks, and edge-case fixtures
+* ✅ Multi-resume batch analysis against one JD
+* ✅ Required vs. preferred skill handling
+* ✅ Synonym and abbreviation mapping
+* ✅ Configurable weighted scoring model
+* ✅ Experience gating
+* ✅ Education-alternative matching
+* ✅ Project evidence scanning
+* ✅ Keyword matching
+* ✅ Candidate ranking using stable sorting
+* ✅ Tie-breaking by skill score and experience score
+* ✅ Explainable matched and missing skills
+* ✅ Synonym-match indicators
+* ✅ Strength and gap generation
+* ✅ Human-readable recommendation
+* ✅ Suitability status bands:
+  * Highly Suitable
+  * Suitable
+  * Partially Suitable
+  * Not Suitable
+* ✅ JSON and plain-text report export
+* ✅ Full 7-screen web dashboard
+* ✅ Automated test suite
+* ✅ Structural validation
+* ✅ Known-value regression testing
+* ✅ Edge-case testing
 
 ## 4. Architecture
-
+```text
+Browser (HTML/CSS/JS)
+        ↓
+server.py
+(Python standard-library HTTP glue)
+        ↓
+bin/hirelens_engine
+(C rule-based analysis engine)
+        ↓
+JSON / Text Reports
 ```
-Browser (HTML/CSS/JS)  →  server.py (Python stdlib glue)  →  bin/hirelens_engine (C)
-```
-
-The C binary is also a standalone CLI tool — no web server required:
+The C binary is also available as a standalone CLI tool:
 
 ```bash
 ./bin/hirelens_engine data/jd/job_description.txt data/resumes output
 ```
+See `docs/architecture.md` for the complete architecture and data contracts.
 
-See **[docs/architecture.md](docs/architecture.md)** for the full
-pipeline diagram and data contracts, and
-**[docs/scoring.md](docs/scoring.md)** for the complete scoring
-methodology and synonym dictionary.
+See `docs/scoring.md` for the scoring methodology and synonym dictionary.
 
-### Why C is the real engine, not just a script
+### Why C is the Real Engine
+The analysis is implemented directly in C using structures, character buffers, arrays, and standard-library functionality.
+| Requirement                        | Implementation                     |
+| ---------------------------------- | ---------------------------------- |
+| Text preprocessing / normalization | `src/text_utils.c`                 |
+| Tokenization / CSV splitting       | `src/text_utils.c`                 |
+| Synonym mapping                    | `src/synonyms.c`                   |
+| JD parsing                         | `src/jd_parser.c`                  |
+| Resume parsing                     | `src/resume_parser.c`              |
+| Keyword / phrase matching          | `src/matcher.c`                    |
+| Required / preferred handling      | `src/matcher.c`, `src/scorer.c`    |
+| Weighted scoring                   | `src/scorer.c`, `include/config.h` |
+| Candidate ranking                  | `src/ranker.c`                     |
+| Explainability                     | `src/explain.c`                    |
+| JSON export                        | `src/json_writer.c`                |
+| Text report generation             | `src/report.c`                     |
+| File and directory handling        | `src/resume_parser.c`              |
 
-Every one of these is implemented as C code operating on `struct`s,
-`char*` buffers and arrays — no shortcuts:
-
-| Requirement                  | Implementation |
-|-------------------------------|----------------|
-| Text preprocessing/normalization | `src/text_utils.c` |
-| Tokenization / CSV splitting  | `src/text_utils.c` (`split_and_trim`) |
-| Synonym mapping               | `src/synonyms.c` (static dictionary + lookup) |
-| JD & resume parsing            | `src/jd_parser.c`, `src/resume_parser.c` |
-| Keyword/phrase matching        | `src/matcher.c` |
-| Required vs. preferred handling | `src/matcher.c`, `src/scorer.c` |
-| Weighted scoring                | `src/scorer.c`, `include/config.h` |
-| Candidate ranking (`qsort`)     | `src/ranker.c` |
-| Explainability / recommendation | `src/explain.c` |
-| JSON export (hand-rolled)       | `src/json_writer.c` |
-| Report export                   | `src/report.c` |
-| File I/O, directory scanning    | `src/resume_parser.c` (`dirent.h`) |
-
-Python (`server.py`) is used **only** as a thin, standard-library-only
-HTTP glue layer that shells out to the compiled binary — it contains
-zero resume-analysis logic. The frontend is plain HTML/CSS/JS with no
-frameworks or build tooling.
+### Web Layer
+`server.py` is only a thin Python standard-library HTTP layer.
+It:
+* Serves the frontend
+* Receives user input
+* Manages temporary input files
+* Executes the C engine
+* Reads generated output
+* Returns results to the browser
+It contains **zero resume-analysis or scoring logic**.
+The frontend is implemented using plain:
+* HTML
+* CSS
+* JavaScript
+No frontend framework or build tooling is required.
 
 ## 5. Algorithm Summary
+### Step 1 — Parse
+The system reads the structured JD:
 
-1. **Parse** JD (`TITLE`, `REQUIRED_SKILLS`, `PREFERRED_SKILLS`,
-   `MIN_EXPERIENCE_YEARS`, `EDUCATION`, `KEYWORDS`) and every resume in
-   `data/resumes/*.txt`.
-2. **Normalize** every skill/degree token through the synonym
-   dictionary into a canonical lowercase form.
-3. **Match**: required skills, preferred skills, education
-   (any-of-alternatives), experience (gated), project text (evidence
-   scan), keyword text (soft-skill scan).
-4. **Score** each component 0–100, then combine with configured
-   weights into `overall_score`.
-5. **Rank** all candidates descending by `overall_score` (`qsort`,
-   tie-broken by skill score then experience score).
-6. **Explain**: generate `strengths[]`, `gaps[]`, a `status` band, and
-   a human-readable `recommendation` sentence directly from the scores
-   and matched/missing lists — no separate hidden logic.
-7. **Export**: `output/ranking.json`, one `output/candidate_N.json`
-   per candidate, and a formatted `output/report.txt`.
-
-Full methodology and worked examples: **[docs/scoring.md](docs/scoring.md)**.
-
-## 6. Project Structure
-
+```text
+TITLE
+REQUIRED_SKILLS
+PREFERRED_SKILLS
+MIN_EXPERIENCE_YEARS
+EDUCATION
+KEYWORDS
 ```
+It then loads every resume from:
+```text
+data/resumes/*.txt
+```
+### Step 2 — Normalize
+Skills, degrees, and relevant text are normalized through the built-in synonym dictionary.
+Examples:
+```text
+ML      → machine learning
+DSA     → data structures and algorithms
+DBMS    → database management systems
+OOP     → object oriented programming
+K8s     → kubernetes
+```
+### Step 3 — Match
+Each candidate is evaluated across multiple dimensions:
+* Required skills
+* Preferred skills
+* Education
+* Experience
+* Project evidence
+* Keywords
+### Step 4 — Score
+Each component receives a score from `0–100`.
+The configured weights are then used to calculate the candidate's overall score.
+### Step 5 — Rank
+Candidates are sorted in descending order of overall score.
+Tie-breaking uses:
+1. Skill score
+2. Experience score
+### Step 6 — Explain
+The engine generates:
+```text
+strengths[]
+gaps[]
+status
+recommendation
+```
+directly from the calculated scores and matched/missing lists.
+There is no separate hidden ranking or explanation mechanism.
+### Step 7 — Export
+The engine generates:
+```text
+output/
+├── ranking.json
+├── candidate_1.json
+├── candidate_2.json
+├── ...
+└── report.txt
+```
+## 6. Project Structure
+```text
 HireLens/
-├── src/                 # C engine implementation (.c)
-├── include/              # C engine headers (.h) — structs, config, prototypes
+├── src/                  # C engine implementation
+├── include/              # C headers, structures and configuration
 ├── data/
-│   ├── jd/                job_description.txt (sample JD)
-│   └── resumes/            5 sample fictional resumes (.txt)
-├── output/                generated ranking.json / candidate_N.json / report.txt
-├── tests/                 automated test suite + edge-case fixtures
-├── docs/                  architecture.md, scoring.md
-├── screenshots/           UI screenshots (add after running locally)
-├── frontend/               HTML/CSS/JS web dashboard (served by server.py)
-├── server.py               Python stdlib-only glue server
-├── Makefile                 builds the C engine
+│   ├── jd/
+│   │   └── job_description.txt
+│   └── resumes/
+│       └── *.txt
+├── output/               # Generated analysis reports
+├── tests/                # Automated tests and fixtures
+├── docs/
+│   ├── architecture.md
+│   └── scoring.md
+├── screenshots/          # UI screenshots
+├── frontend/             # HTML/CSS/JS dashboard
+├── server.py             # Python standard-library web server
+├── Makefile              # C build configuration
 ├── README.md
 └── .gitignore
 ```
-
-## 7. Setup & Run Instructions
-
+## 7. Setup & Run
 ### Prerequisites
-
-- `gcc` (or any C11-compliant compiler) and `make`
-- `python3` (standard library only — no `pip install` needed, ever)
-- A POSIX-like environment (Linux/macOS/WSL) — the engine uses
-  `dirent.h` for directory scanning
-
-### Build the C engine
-
+* GCC or another C11-compatible compiler
+* Make
+* Python 3
+* A POSIX-compatible environment such as Linux, macOS, or WSL
+The Python web layer uses only the standard library. No `pip install` is required.
+### Build the C Engine
 ```bash
 cd HireLens
 make
 ```
-
-This produces `bin/hirelens_engine`.
-
-### Option A — Run as a CLI tool (no web server)
-
+This produces:
+```text
+bin/hirelens_engine
+```
+### Option A — CLI Mode
+Run the engine directly:
 ```bash
 ./bin/hirelens_engine data/jd/job_description.txt data/resumes output
+```
+View the generated report:
+
+```bash
 cat output/report.txt
 ```
+### Option B — Web Dashboard
 
-### Option B — Run the full web dashboard
+Start the server:
 
 ```bash
 python3 server.py
-# then open http://localhost:8000 in a browser
 ```
 
-In the UI:
-1. **Dashboard** — overview and quick-start
-2. **Job Description** — load the sample JD or paste/upload your own
-3. **Resumes** — load the 5 sample resumes or upload your own `.txt` files
-4. **Analyze** — runs the C engine as a subprocess
-5. **Ranking** — sortable table of all candidates with sub-scores
-6. **Candidate Detail** — full explainable breakdown per candidate
-7. **Export** — download `ranking.json` or `report.txt`
+Then open:
 
-The web layer never re-implements analysis logic; it always calls
-`bin/hirelens_engine` fresh on every "Analyze" click.
+```text
+http://localhost:8000
+```
+
+### Dashboard Flow
+
+1. **Dashboard** — system overview and quick start
+2. **Job Description** — load or enter a JD
+3. **Resumes** — load or upload resumes
+4. **Analyze** — execute the C matching engine
+5. **Ranking** — view ranked candidates and sub-scores
+6. **Candidate Detail** — inspect the complete explanation
+7. **Export** — download generated reports
+The web interface always executes the C engine for analysis instead of duplicating the scoring logic in JavaScript or Python.
 
 ## 8. Testing
+
+Run the complete test suite:
 
 ```bash
 bash tests/run_tests.sh
 ```
 
-The suite:
+The test suite:
+
 1. Builds the engine from a clean state
-2. Runs it against the bundled sample dataset and validates the JSON
-   structure (`tests/validate_output.py`)
-3. Runs it against edge-case fixtures in `tests/fixtures/`
-   (empty skills, zero experience, blank optional fields, mixed-case
-   synonym-heavy input) to confirm the engine degrades gracefully
-   instead of crashing
-4. Runs known-value regression assertions
-   (`tests/assert_known_values.py`) against the sample dataset — e.g.
-   asserting the strongest sample candidate ranks #1 and is "Highly
-   Suitable", and that synonym-based matches are actually detected
+2. Runs the bundled sample dataset
+3. Validates the generated JSON structure
+4. Tests edge-case fixtures
+5. Tests empty skills and optional fields
+6. Tests zero-experience candidates
+7. Tests mixed-case and synonym-heavy input
+8. Performs known-value regression checks
+9. Verifies candidate ranking
+10. Verifies synonym-based matching
+The tests are designed to ensure that the engine produces deterministic and stable results without crashing on unusual inputs.
 
 ## 9. Sample Data
 
-`data/jd/job_description.txt` defines a Backend Software Engineer role.
-`data/resumes/` contains 5 fictional candidates spanning the full
-suitability spectrum:
+The bundled dataset contains five fictional candidates for a Backend Software Engineer role.
 
-| Candidate      | Profile                                      | Typical Result |
-|-----------------|-----------------------------------------------|----------------|
-| Karthik Iyer     | Senior, uses abbreviations (K8s, API, ML, DSA) | Highly Suitable |
-| Aisha Sharma     | Mid-level, direct skill matches, strong projects | Highly Suitable |
-| Sneha Reddy      | Junior-mid, missing a couple of required skills | Partially Suitable |
-| Rohan Verma      | Fresh graduate, limited backend exposure       | Not Suitable |
-| Priya Nair       | Unrelated background (Physics), no matching skills | Not Suitable |
+| Candidate    | Profile                                                           | Typical Result     |
+| ------------ | ----------------------------------------------------------------- | ------------------ |
+| Karthik Iyer | Senior profile with strong backend skills and abbreviations       | Highly Suitable    |
+| Aisha Sharma | Mid-level candidate with direct skill matches and strong projects | Highly Suitable    |
+| Sneha Reddy  | Junior-mid profile with some missing requirements                 | Partially Suitable |
+| Rohan Verma  | Fresh graduate with limited backend exposure                      | Not Suitable       |
+| Priya Nair   | Unrelated background with minimal matching skills                 | Not Suitable       |
 
-Run the engine or the web UI to see the exact scores — this table is
-illustrative, not hard-coded.
-
+The results shown above are illustrative. The actual scores and ranking are calculated dynamically by the C engine.
 ## 10. Limitations
 
-- **Not NLP/ML.** Matching is exact/substring-based after synonym
-  normalization — it does not understand semantics, context, or
-  sentence structure. A resume that says "no experience with SQL"
-  would still register "SQL" as a keyword hit; there is no negation
-  handling.
-- **Structured input required.** Resumes and JDs must follow the
-  `KEY: value` format. HireLens deliberately does not attempt to parse
-  arbitrary PDF/Word resumes with zero external libraries, since that
-  would make matching unreliable — a directly stated design trade-off,
-  not an oversight.
-- **Synonym dictionary is finite.** ~90 hard-coded entries cover
-  common CS/software terms; an unlisted abbreviation falls back to
-  literal string matching.
-- **Single-process, single-user.** `server.py` is a demo-grade local
-  server, not a production deployment (no auth, no concurrency
-  hardening beyond basic threading).
-- **English only.** No multilingual support.
+### No Semantic Understanding
+HireLens is rule-based rather than ML/NLP-based.
+Matching is primarily exact or substring-based after synonym normalization.
+
+For example, a resume containing:
+
+```text
+No experience with SQL
+```
+may still register `SQL` as a match because the current engine does not implement contextual negation detection.
+
+### Structured Input Required
+Resumes and Job Descriptions must follow the expected `KEY: value` format.
+The current system does not attempt to extract information from arbitrary PDF or Word documents.
+This keeps the core system dependency-free and deterministic.
+
+### Finite Synonym Dictionary
+The built-in dictionary contains approximately 90 common technical terms and abbreviations.
+Unknown abbreviations fall back to literal matching.
+
+### Local Single-Process Server
+`server.py` is designed as a lightweight local application server rather than a production deployment.
+It does not provide:
+* Authentication
+* Production-grade security
+* Distributed processing
+* Persistent user management
+
+### English Only
+The current matching and synonym system is designed for English-language resumes and job descriptions.
 
 ## 11. Future Enhancements
+Potential future improvements include:
+* Configurable synonym dictionary loaded from an external data file
+* Fuzzy and edit-distance matching
+* PDF and DOCX resume ingestion
+* Per-JD scoring configuration through the UI
+* Combined candidate report export
+* Side-by-side candidate comparison
+* Additional configurable matching rules
+* Expanded synonym and skill dictionaries
+* Multilingual resume support
 
-- Configurable synonym dictionary loaded from a data file instead of
-  compiled-in constants, so it can be extended without rebuilding
-- Fuzzy/edit-distance matching for minor spelling variations
-- PDF/DOCX ingestion (would require adding a parsing library, which
-  the current assessment constraints intentionally exclude)
-- Per-JD custom scoring weights via the UI (currently compile-time)
-- Bulk export (all candidates) to a single combined PDF report
-- Candidate comparison view (side-by-side breakdown of 2+ candidates)
+## 12. Design Philosophy
+HireLens focuses on three principles:
 
-## 12. Academic Integrity Note
+### Deterministic
+The same input always produces the same result.
 
-This project is explicitly a **rule-based, deterministic C program**.
-It does not call OpenAI, Gemini, HuggingFace, or any other AI/LLM
-service, and does not use spaCy, NLTK, or any NLP library. All
-"intelligence" — parsing, synonym normalization, matching, scoring,
-ranking and explanation generation — is hand-implemented in standard
-C, as required by the assessment brief.
+### Explainable
+Every score can be traced back to explicit matching rules.
+
+### Inspectable
+The complete matching, scoring, ranking, and explanation logic exists in the source code.
+There is no hidden model or external service making decisions.
+---
+## License
+This project is available for educational and demonstration purposes.
