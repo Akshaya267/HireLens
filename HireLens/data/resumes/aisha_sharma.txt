@@ -1,0 +1,8 @@
+NAME: Aisha Sharma
+EMAIL: aisha.sharma@example.com
+PHONE: 9876543210
+EXPERIENCE_YEARS: 3
+EDUCATION: B.Tech Computer Science, Delhi Technical University, 2021
+SKILLS: Java, Python, SQL, Data Structures, Database Management System, REST API, Git, Docker, Machine Learning
+PROJECTS: Designed and built a scalable microservices based e-commerce backend using Java and REST API, deployed with Docker on AWS. Implemented a recommendation engine using Machine Learning in Python. Optimized SQL queries improving backend performance by 30 percent.
+SUMMARY: Backend engineer with 3 years of experience building scalable, high performance systems. Strong in DSA and DBMS fundamentals, comfortable working in agile teams with a focus on teamwork and problem solving.

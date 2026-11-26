@@ -1,0 +1,6 @@
+TITLE: Backend Software Engineer (Junior-Mid Level)
+REQUIRED_SKILLS: Java, Python, SQL, DSA, DBMS, REST API, Git
+PREFERRED_SKILLS: Docker, Kubernetes, AWS, ML, Agile
+MIN_EXPERIENCE_YEARS: 2
+EDUCATION: B.Tech Computer Science, BCA, B.E Computer Science
+KEYWORDS: scalable, microservices, agile, teamwork, problem solving, backend, performance

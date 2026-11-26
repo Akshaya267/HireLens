@@ -1,0 +1,46 @@
+{
+  "rank": 5,
+  "name": "Priya Nair",
+  "email": "priya.nair@example.com",
+  "phone": "9123456780",
+  "source_file": "data/resumes/priya_nair.txt",
+  "experience_years": 0,
+  "overall_score": 0.00,
+  "skill_score": 0.00,
+  "experience_score": 0.00,
+  "education_score": 0.00,
+  "project_score": 0.00,
+  "keyword_score": 0.00,
+  "status": "Not Suitable",
+  "recommendation": "Priya Nair scored 0.0/100 overall (Not Suitable). Not recommended for this specific role based on current profile. Required skills matched: 0/7. Experience: 0 yr(s) vs 2 required.",
+  "matched_required": [
+],
+  "matched_preferred": [
+],
+  "missing_required": [
+  "Java",
+  "Python",
+  "SQL",
+  "DSA",
+  "DBMS",
+  "REST API",
+  "Git"
+],
+  "missing_preferred": [
+  "Docker",
+  "Kubernetes",
+  "AWS",
+  "ML",
+  "Agile"
+],
+  "strengths": [
+  "Matched 0 of 7 required skills (0%)"
+],
+  "gaps": [
+  "Missing 7 required skill(s): Java, Python, SQL, DSA, DBMS, REST API, Git",
+  "Experience is 0 year(s), below the required 2 year(s)",
+  "Education background does not clearly match the JD requirement",
+  "Projects show limited evidence of the required/preferred skills",
+  "Missing 5 preferred/bonus skill(s)"
+]
+}

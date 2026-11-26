@@ -1,0 +1,47 @@
+{
+  "rank": 1,
+  "name": "Karthik Iyer",
+  "email": "karthik.iyer@example.com",
+  "phone": "9988776655",
+  "source_file": "data/resumes/karthik_iyer.txt",
+  "experience_years": 5,
+  "overall_score": 88.67,
+  "skill_score": 94.00,
+  "experience_score": 100.00,
+  "education_score": 100.00,
+  "project_score": 50.00,
+  "keyword_score": 85.71,
+  "status": "Highly Suitable",
+  "recommendation": "Karthik Iyer scored 88.7/100 overall (Highly Suitable). Recommended for interview -- strong alignment with the role. Required skills matched: 7/7. Experience: 5 yr(s) vs 2 required.",
+  "matched_required": [
+  { "skill": "Java", "via_synonym": false },
+  { "skill": "Python", "via_synonym": false },
+  { "skill": "SQL", "via_synonym": false },
+  { "skill": "DSA", "via_synonym": false },
+  { "skill": "DBMS", "via_synonym": false },
+  { "skill": "REST API", "via_synonym": true },
+  { "skill": "Git", "via_synonym": false }
+],
+  "matched_preferred": [
+  { "skill": "Kubernetes", "via_synonym": true },
+  { "skill": "AWS", "via_synonym": false },
+  { "skill": "ML", "via_synonym": false },
+  { "skill": "Agile", "via_synonym": false }
+],
+  "missing_required": [
+],
+  "missing_preferred": [
+  "Docker"
+],
+  "strengths": [
+  "Matched 7 of 7 required skills (100%)",
+  "Also brings 4 preferred/bonus skill(s)",
+  "Meets or exceeds the 2 year experience requirement",
+  "Education matches the JD requirement",
+  "Resume language strongly reflects the JD's domain keywords",
+  "2 skill(s) recognized through synonym mapping (e.g. abbreviations)"
+],
+  "gaps": [
+  "Missing 1 preferred/bonus skill(s)"
+]
+}

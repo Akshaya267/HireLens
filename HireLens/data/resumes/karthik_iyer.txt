@@ -1,0 +1,8 @@
+NAME: Karthik Iyer
+EMAIL: karthik.iyer@example.com
+PHONE: 9988776655
+EXPERIENCE_YEARS: 5
+EDUCATION: B.E Computer Science, Anna University, 2019
+SKILLS: Java, Python, SQL, DSA, DBMS, API, Git, K8s, AWS, ML, Agile
+PROJECTS: Led backend development of a scalable microservices platform, containerized with Docker and orchestrated on K8s across AWS. Built internal ML based fraud detection pipeline in Python. Mentored junior engineers on DSA and DBMS best practices.
+SUMMARY: Senior backend engineer with 5 years experience delivering scalable, performant systems in agile teams. Strong focus on teamwork, mentorship and problem solving.

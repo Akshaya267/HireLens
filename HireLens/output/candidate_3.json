@@ -1,0 +1,47 @@
+{
+  "rank": 3,
+  "name": "Sneha Reddy",
+  "email": "sneha.reddy@example.com",
+  "phone": "9012345678",
+  "source_file": "data/resumes/sneha_reddy.txt",
+  "experience_years": 2,
+  "overall_score": 59.11,
+  "skill_score": 50.00,
+  "experience_score": 100.00,
+  "education_score": 100.00,
+  "project_score": 8.33,
+  "keyword_score": 28.57,
+  "status": "Partially Suitable",
+  "recommendation": "Sneha Reddy scored 59.1/100 overall (Partially Suitable). Consider only if the candidate pool is limited; several gaps exist. Required skills matched: 5/7. Experience: 2 yr(s) vs 2 required.",
+  "matched_required": [
+  { "skill": "Java", "via_synonym": false },
+  { "skill": "SQL", "via_synonym": false },
+  { "skill": "DSA", "via_synonym": true },
+  { "skill": "DBMS", "via_synonym": true },
+  { "skill": "Git", "via_synonym": false }
+],
+  "matched_preferred": [
+],
+  "missing_required": [
+  "Python",
+  "REST API"
+],
+  "missing_preferred": [
+  "Docker",
+  "Kubernetes",
+  "AWS",
+  "ML",
+  "Agile"
+],
+  "strengths": [
+  "Matched 5 of 7 required skills (71%)",
+  "Meets or exceeds the 2 year experience requirement",
+  "Education matches the JD requirement",
+  "2 skill(s) recognized through synonym mapping (e.g. abbreviations)"
+],
+  "gaps": [
+  "Missing 2 required skill(s): Python, REST API",
+  "Projects show limited evidence of the required/preferred skills",
+  "Missing 5 preferred/bonus skill(s)"
+]
+}

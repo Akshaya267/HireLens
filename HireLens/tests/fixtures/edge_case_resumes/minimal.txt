@@ -1,0 +1,8 @@
+NAME: Minimal Candidate
+EMAIL: minimal@example.com
+PHONE: 0000000000
+EXPERIENCE_YEARS: 0
+EDUCATION: 
+SKILLS: Java, Data Structures
+PROJECTS: 
+SUMMARY: 

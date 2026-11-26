@@ -1,0 +1,47 @@
+{
+  "rank": 2,
+  "name": "Aisha Sharma",
+  "email": "aisha.sharma@example.com",
+  "phone": "9876543210",
+  "source_file": "data/resumes/aisha_sharma.txt",
+  "experience_years": 3,
+  "overall_score": 86.55,
+  "skill_score": 82.00,
+  "experience_score": 100.00,
+  "education_score": 100.00,
+  "project_score": 58.33,
+  "keyword_score": 100.00,
+  "status": "Highly Suitable",
+  "recommendation": "Aisha Sharma scored 86.6/100 overall (Highly Suitable). Recommended for interview -- strong alignment with the role. Required skills matched: 7/7. Experience: 3 yr(s) vs 2 required.",
+  "matched_required": [
+  { "skill": "Java", "via_synonym": false },
+  { "skill": "Python", "via_synonym": false },
+  { "skill": "SQL", "via_synonym": false },
+  { "skill": "DSA", "via_synonym": true },
+  { "skill": "DBMS", "via_synonym": true },
+  { "skill": "REST API", "via_synonym": false },
+  { "skill": "Git", "via_synonym": false }
+],
+  "matched_preferred": [
+  { "skill": "Docker", "via_synonym": false },
+  { "skill": "ML", "via_synonym": true }
+],
+  "missing_required": [
+],
+  "missing_preferred": [
+  "Kubernetes",
+  "AWS",
+  "Agile"
+],
+  "strengths": [
+  "Matched 7 of 7 required skills (100%)",
+  "Also brings 2 preferred/bonus skill(s)",
+  "Meets or exceeds the 2 year experience requirement",
+  "Education matches the JD requirement",
+  "Resume language strongly reflects the JD's domain keywords",
+  "3 skill(s) recognized through synonym mapping (e.g. abbreviations)"
+],
+  "gaps": [
+  "Missing 3 preferred/bonus skill(s)"
+]
+}

@@ -1,0 +1,222 @@
+================================================================
+  HireLens - Intelligent Resume Analyzer
+  Candidate Ranking Report
+  Generated: 2026-08-09 04:32:47
+================================================================
+
+Job Description : Backend Software Engineer (Junior-Mid Level)
+Required Skills  : 7   Preferred Skills: 5
+Min. Experience  : 2 year(s)
+Candidates Ranked: 5
+
+----------------------------------------------------------------
+Rank  Candidate                Score    Status              
+----------------------------------------------------------------
+1     Karthik Iyer             88.7     Highly Suitable     
+2     Aisha Sharma             86.6     Highly Suitable     
+3     Sneha Reddy              59.1     Partially Suitable  
+4     Rohan Verma              47.6     Not Suitable        
+5     Priya Nair               0.0      Not Suitable        
+----------------------------------------------------------------
+
+================================================================
+#1  Karthik Iyer  (Highly Suitable)
+================================================================
+Email: karthik.iyer@example.com   Phone: 9988776655   Experience: 5 yr(s)
+Source: data/resumes/karthik_iyer.txt
+
+Overall Score      : 88.7 / 100
+  Skill Score      : 94.0  (weight 40%)
+  Experience Score : 100.0  (weight 20%)
+  Education Score  : 100.0  (weight 15%)
+  Project Score    : 50.0  (weight 15%)
+  Keyword Score    : 85.7  (weight 10%)
+
+Matched Required Skills (7):
+  - Java
+  - Python
+  - SQL
+  - DSA
+  - DBMS
+  - REST API  [matched via synonym]
+  - Git
+Missing Required Skills (0):
+  (none)
+Matched Preferred Skills (4):
+  - Kubernetes  [matched via synonym]
+  - AWS
+  - ML
+  - Agile
+
+Strengths:
+  + Matched 7 of 7 required skills (100%)
+  + Also brings 4 preferred/bonus skill(s)
+  + Meets or exceeds the 2 year experience requirement
+  + Education matches the JD requirement
+  + Resume language strongly reflects the JD's domain keywords
+  + 2 skill(s) recognized through synonym mapping (e.g. abbreviations)
+
+Gaps:
+  - Missing 1 preferred/bonus skill(s)
+
+Recommendation:
+  Karthik Iyer scored 88.7/100 overall (Highly Suitable). Recommended for interview -- strong alignment with the role. Required skills matched: 7/7. Experience: 5 yr(s) vs 2 required.
+
+================================================================
+#2  Aisha Sharma  (Highly Suitable)
+================================================================
+Email: aisha.sharma@example.com   Phone: 9876543210   Experience: 3 yr(s)
+Source: data/resumes/aisha_sharma.txt
+
+Overall Score      : 86.6 / 100
+  Skill Score      : 82.0  (weight 40%)
+  Experience Score : 100.0  (weight 20%)
+  Education Score  : 100.0  (weight 15%)
+  Project Score    : 58.3  (weight 15%)
+  Keyword Score    : 100.0  (weight 10%)
+
+Matched Required Skills (7):
+  - Java
+  - Python
+  - SQL
+  - DSA  [matched via synonym]
+  - DBMS  [matched via synonym]
+  - REST API
+  - Git
+Missing Required Skills (0):
+  (none)
+Matched Preferred Skills (2):
+  - Docker
+  - ML  [matched via synonym]
+
+Strengths:
+  + Matched 7 of 7 required skills (100%)
+  + Also brings 2 preferred/bonus skill(s)
+  + Meets or exceeds the 2 year experience requirement
+  + Education matches the JD requirement
+  + Resume language strongly reflects the JD's domain keywords
+  + 3 skill(s) recognized through synonym mapping (e.g. abbreviations)
+
+Gaps:
+  - Missing 3 preferred/bonus skill(s)
+
+Recommendation:
+  Aisha Sharma scored 86.6/100 overall (Highly Suitable). Recommended for interview -- strong alignment with the role. Required skills matched: 7/7. Experience: 3 yr(s) vs 2 required.
+
+================================================================
+#3  Sneha Reddy  (Partially Suitable)
+================================================================
+Email: sneha.reddy@example.com   Phone: 9012345678   Experience: 2 yr(s)
+Source: data/resumes/sneha_reddy.txt
+
+Overall Score      : 59.1 / 100
+  Skill Score      : 50.0  (weight 40%)
+  Experience Score : 100.0  (weight 20%)
+  Education Score  : 100.0  (weight 15%)
+  Project Score    : 8.3  (weight 15%)
+  Keyword Score    : 28.6  (weight 10%)
+
+Matched Required Skills (5):
+  - Java
+  - SQL
+  - DSA  [matched via synonym]
+  - DBMS  [matched via synonym]
+  - Git
+Missing Required Skills (2):
+  - Python
+  - REST API
+Matched Preferred Skills (0):
+  (none)
+
+Strengths:
+  + Matched 5 of 7 required skills (71%)
+  + Meets or exceeds the 2 year experience requirement
+  + Education matches the JD requirement
+  + 2 skill(s) recognized through synonym mapping (e.g. abbreviations)
+
+Gaps:
+  - Missing 2 required skill(s): Python, REST API
+  - Projects show limited evidence of the required/preferred skills
+  - Missing 5 preferred/bonus skill(s)
+
+Recommendation:
+  Sneha Reddy scored 59.1/100 overall (Partially Suitable). Consider only if the candidate pool is limited; several gaps exist. Required skills matched: 5/7. Experience: 2 yr(s) vs 2 required.
+
+================================================================
+#4  Rohan Verma  (Not Suitable)
+================================================================
+Email: rohan.verma@example.com   Phone: 9876501234   Experience: 1 yr(s)
+Source: data/resumes/rohan_verma.txt
+
+Overall Score      : 47.6 / 100
+  Skill Score      : 40.0  (weight 40%)
+  Experience Score : 50.0  (weight 20%)
+  Education Score  : 100.0  (weight 15%)
+  Project Score    : 25.0  (weight 15%)
+  Keyword Score    : 28.6  (weight 10%)
+
+Matched Required Skills (4):
+  - Java
+  - Python
+  - DSA  [matched via synonym]
+  - Git
+Missing Required Skills (3):
+  - SQL
+  - DBMS
+  - REST API
+Matched Preferred Skills (0):
+  (none)
+
+Strengths:
+  + Matched 4 of 7 required skills (57%)
+  + Education matches the JD requirement
+  + 1 skill(s) recognized through synonym mapping (e.g. abbreviations)
+
+Gaps:
+  - Missing 3 required skill(s): SQL, DBMS, REST API
+  - Experience is 1 year(s), below the required 2 year(s)
+  - Projects show limited evidence of the required/preferred skills
+  - Missing 5 preferred/bonus skill(s)
+
+Recommendation:
+  Rohan Verma scored 47.6/100 overall (Not Suitable). Not recommended for this specific role based on current profile. Required skills matched: 4/7. Experience: 1 yr(s) vs 2 required.
+
+================================================================
+#5  Priya Nair  (Not Suitable)
+================================================================
+Email: priya.nair@example.com   Phone: 9123456780   Experience: 0 yr(s)
+Source: data/resumes/priya_nair.txt
+
+Overall Score      : 0.0 / 100
+  Skill Score      : 0.0  (weight 40%)
+  Experience Score : 0.0  (weight 20%)
+  Education Score  : 0.0  (weight 15%)
+  Project Score    : 0.0  (weight 15%)
+  Keyword Score    : 0.0  (weight 10%)
+
+Matched Required Skills (0):
+  (none)
+Missing Required Skills (7):
+  - Java
+  - Python
+  - SQL
+  - DSA
+  - DBMS
+  - REST API
+  - Git
+Matched Preferred Skills (0):
+  (none)
+
+Strengths:
+  + Matched 0 of 7 required skills (0%)
+
+Gaps:
+  - Missing 7 required skill(s): Java, Python, SQL, DSA, DBMS, REST API, Git
+  - Experience is 0 year(s), below the required 2 year(s)
+  - Education background does not clearly match the JD requirement
+  - Projects show limited evidence of the required/preferred skills
+  - Missing 5 preferred/bonus skill(s)
+
+Recommendation:
+  Priya Nair scored 0.0/100 overall (Not Suitable). Not recommended for this specific role based on current profile. Required skills matched: 0/7. Experience: 0 yr(s) vs 2 required.
+

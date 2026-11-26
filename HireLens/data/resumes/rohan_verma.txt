@@ -1,0 +1,8 @@
+NAME: Rohan Verma
+EMAIL: rohan.verma@example.com
+PHONE: 9876501234
+EXPERIENCE_YEARS: 1
+EDUCATION: B.Tech Computer Science, Pune Institute of Technology, 2023
+SKILLS: Java, Python, Data Structures and Algorithms, Git, HTML, CSS
+PROJECTS: Built a personal portfolio website using HTML and CSS. Contributed to a college team project implementing a to-do list application in Java with basic REST API endpoints.
+SUMMARY: Recent graduate with 1 year of internship experience, eager to learn, comfortable working in a team environment on backend problem solving tasks.

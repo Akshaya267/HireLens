@@ -1,0 +1,47 @@
+{
+  "rank": 4,
+  "name": "Rohan Verma",
+  "email": "rohan.verma@example.com",
+  "phone": "9876501234",
+  "source_file": "data/resumes/rohan_verma.txt",
+  "experience_years": 1,
+  "overall_score": 47.61,
+  "skill_score": 40.00,
+  "experience_score": 50.00,
+  "education_score": 100.00,
+  "project_score": 25.00,
+  "keyword_score": 28.57,
+  "status": "Not Suitable",
+  "recommendation": "Rohan Verma scored 47.6/100 overall (Not Suitable). Not recommended for this specific role based on current profile. Required skills matched: 4/7. Experience: 1 yr(s) vs 2 required.",
+  "matched_required": [
+  { "skill": "Java", "via_synonym": false },
+  { "skill": "Python", "via_synonym": false },
+  { "skill": "DSA", "via_synonym": true },
+  { "skill": "Git", "via_synonym": false }
+],
+  "matched_preferred": [
+],
+  "missing_required": [
+  "SQL",
+  "DBMS",
+  "REST API"
+],
+  "missing_preferred": [
+  "Docker",
+  "Kubernetes",
+  "AWS",
+  "ML",
+  "Agile"
+],
+  "strengths": [
+  "Matched 4 of 7 required skills (57%)",
+  "Education matches the JD requirement",
+  "1 skill(s) recognized through synonym mapping (e.g. abbreviations)"
+],
+  "gaps": [
+  "Missing 3 required skill(s): SQL, DBMS, REST API",
+  "Experience is 1 year(s), below the required 2 year(s)",
+  "Projects show limited evidence of the required/preferred skills",
+  "Missing 5 preferred/bonus skill(s)"
+]
+}

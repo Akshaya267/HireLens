@@ -1,0 +1,245 @@
+{
+  "job_description": {
+    "title": "Backend Software Engineer (Junior-Mid Level)",
+    "required_skill_count": 7,
+    "preferred_skill_count": 5,
+    "min_experience_years": 2
+  },
+  "candidate_count": 5,
+  "candidates": [
+    {
+      "rank": 1,
+      "name": "Karthik Iyer",
+      "email": "karthik.iyer@example.com",
+      "phone": "9988776655",
+      "source_file": "data/resumes/karthik_iyer.txt",
+      "experience_years": 5,
+      "overall_score": 88.67,
+      "skill_score": 94.00,
+      "experience_score": 100.00,
+      "education_score": 100.00,
+      "project_score": 50.00,
+      "keyword_score": 85.71,
+      "status": "Highly Suitable",
+      "recommendation": "Karthik Iyer scored 88.7/100 overall (Highly Suitable). Recommended for interview -- strong alignment with the role. Required skills matched: 7/7. Experience: 5 yr(s) vs 2 required.",
+      "matched_required": [
+      { "skill": "Java", "via_synonym": false },
+      { "skill": "Python", "via_synonym": false },
+      { "skill": "SQL", "via_synonym": false },
+      { "skill": "DSA", "via_synonym": false },
+      { "skill": "DBMS", "via_synonym": false },
+      { "skill": "REST API", "via_synonym": true },
+      { "skill": "Git", "via_synonym": false }
+    ],
+      "matched_preferred": [
+      { "skill": "Kubernetes", "via_synonym": true },
+      { "skill": "AWS", "via_synonym": false },
+      { "skill": "ML", "via_synonym": false },
+      { "skill": "Agile", "via_synonym": false }
+    ],
+      "missing_required": [
+    ],
+      "missing_preferred": [
+      "Docker"
+    ],
+      "strengths": [
+      "Matched 7 of 7 required skills (100%)",
+      "Also brings 4 preferred/bonus skill(s)",
+      "Meets or exceeds the 2 year experience requirement",
+      "Education matches the JD requirement",
+      "Resume language strongly reflects the JD's domain keywords",
+      "2 skill(s) recognized through synonym mapping (e.g. abbreviations)"
+    ],
+      "gaps": [
+      "Missing 1 preferred/bonus skill(s)"
+    ]
+    },
+    {
+      "rank": 2,
+      "name": "Aisha Sharma",
+      "email": "aisha.sharma@example.com",
+      "phone": "9876543210",
+      "source_file": "data/resumes/aisha_sharma.txt",
+      "experience_years": 3,
+      "overall_score": 86.55,
+      "skill_score": 82.00,
+      "experience_score": 100.00,
+      "education_score": 100.00,
+      "project_score": 58.33,
+      "keyword_score": 100.00,
+      "status": "Highly Suitable",
+      "recommendation": "Aisha Sharma scored 86.6/100 overall (Highly Suitable). Recommended for interview -- strong alignment with the role. Required skills matched: 7/7. Experience: 3 yr(s) vs 2 required.",
+      "matched_required": [
+      { "skill": "Java", "via_synonym": false },
+      { "skill": "Python", "via_synonym": false },
+      { "skill": "SQL", "via_synonym": false },
+      { "skill": "DSA", "via_synonym": true },
+      { "skill": "DBMS", "via_synonym": true },
+      { "skill": "REST API", "via_synonym": false },
+      { "skill": "Git", "via_synonym": false }
+    ],
+      "matched_preferred": [
+      { "skill": "Docker", "via_synonym": false },
+      { "skill": "ML", "via_synonym": true }
+    ],
+      "missing_required": [
+    ],
+      "missing_preferred": [
+      "Kubernetes",
+      "AWS",
+      "Agile"
+    ],
+      "strengths": [
+      "Matched 7 of 7 required skills (100%)",
+      "Also brings 2 preferred/bonus skill(s)",
+      "Meets or exceeds the 2 year experience requirement",
+      "Education matches the JD requirement",
+      "Resume language strongly reflects the JD's domain keywords",
+      "3 skill(s) recognized through synonym mapping (e.g. abbreviations)"
+    ],
+      "gaps": [
+      "Missing 3 preferred/bonus skill(s)"
+    ]
+    },
+    {
+      "rank": 3,
+      "name": "Sneha Reddy",
+      "email": "sneha.reddy@example.com",
+      "phone": "9012345678",
+      "source_file": "data/resumes/sneha_reddy.txt",
+      "experience_years": 2,
+      "overall_score": 59.11,
+      "skill_score": 50.00,
+      "experience_score": 100.00,
+      "education_score": 100.00,
+      "project_score": 8.33,
+      "keyword_score": 28.57,
+      "status": "Partially Suitable",
+      "recommendation": "Sneha Reddy scored 59.1/100 overall (Partially Suitable). Consider only if the candidate pool is limited; several gaps exist. Required skills matched: 5/7. Experience: 2 yr(s) vs 2 required.",
+      "matched_required": [
+      { "skill": "Java", "via_synonym": false },
+      { "skill": "SQL", "via_synonym": false },
+      { "skill": "DSA", "via_synonym": true },
+      { "skill": "DBMS", "via_synonym": true },
+      { "skill": "Git", "via_synonym": false }
+    ],
+      "matched_preferred": [
+    ],
+      "missing_required": [
+      "Python",
+      "REST API"
+    ],
+      "missing_preferred": [
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "ML",
+      "Agile"
+    ],
+      "strengths": [
+      "Matched 5 of 7 required skills (71%)",
+      "Meets or exceeds the 2 year experience requirement",
+      "Education matches the JD requirement",
+      "2 skill(s) recognized through synonym mapping (e.g. abbreviations)"
+    ],
+      "gaps": [
+      "Missing 2 required skill(s): Python, REST API",
+      "Projects show limited evidence of the required/preferred skills",
+      "Missing 5 preferred/bonus skill(s)"
+    ]
+    },
+    {
+      "rank": 4,
+      "name": "Rohan Verma",
+      "email": "rohan.verma@example.com",
+      "phone": "9876501234",
+      "source_file": "data/resumes/rohan_verma.txt",
+      "experience_years": 1,
+      "overall_score": 47.61,
+      "skill_score": 40.00,
+      "experience_score": 50.00,
+      "education_score": 100.00,
+      "project_score": 25.00,
+      "keyword_score": 28.57,
+      "status": "Not Suitable",
+      "recommendation": "Rohan Verma scored 47.6/100 overall (Not Suitable). Not recommended for this specific role based on current profile. Required skills matched: 4/7. Experience: 1 yr(s) vs 2 required.",
+      "matched_required": [
+      { "skill": "Java", "via_synonym": false },
+      { "skill": "Python", "via_synonym": false },
+      { "skill": "DSA", "via_synonym": true },
+      { "skill": "Git", "via_synonym": false }
+    ],
+      "matched_preferred": [
+    ],
+      "missing_required": [
+      "SQL",
+      "DBMS",
+      "REST API"
+    ],
+      "missing_preferred": [
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "ML",
+      "Agile"
+    ],
+      "strengths": [
+      "Matched 4 of 7 required skills (57%)",
+      "Education matches the JD requirement",
+      "1 skill(s) recognized through synonym mapping (e.g. abbreviations)"
+    ],
+      "gaps": [
+      "Missing 3 required skill(s): SQL, DBMS, REST API",
+      "Experience is 1 year(s), below the required 2 year(s)",
+      "Projects show limited evidence of the required/preferred skills",
+      "Missing 5 preferred/bonus skill(s)"
+    ]
+    },
+    {
+      "rank": 5,
+      "name": "Priya Nair",
+      "email": "priya.nair@example.com",
+      "phone": "9123456780",
+      "source_file": "data/resumes/priya_nair.txt",
+      "experience_years": 0,
+      "overall_score": 0.00,
+      "skill_score": 0.00,
+      "experience_score": 0.00,
+      "education_score": 0.00,
+      "project_score": 0.00,
+      "keyword_score": 0.00,
+      "status": "Not Suitable",
+      "recommendation": "Priya Nair scored 0.0/100 overall (Not Suitable). Not recommended for this specific role based on current profile. Required skills matched: 0/7. Experience: 0 yr(s) vs 2 required.",
+      "matched_required": [
+    ],
+      "matched_preferred": [
+    ],
+      "missing_required": [
+      "Java",
+      "Python",
+      "SQL",
+      "DSA",
+      "DBMS",
+      "REST API",
+      "Git"
+    ],
+      "missing_preferred": [
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "ML",
+      "Agile"
+    ],
+      "strengths": [
+      "Matched 0 of 7 required skills (0%)"
+    ],
+      "gaps": [
+      "Missing 7 required skill(s): Java, Python, SQL, DSA, DBMS, REST API, Git",
+      "Experience is 0 year(s), below the required 2 year(s)",
+      "Education background does not clearly match the JD requirement",
+      "Projects show limited evidence of the required/preferred skills",
+      "Missing 5 preferred/bonus skill(s)"
+    ]
+    }
+  ]
+}

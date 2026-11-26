@@ -1,0 +1,8 @@
+NAME: Priya Nair
+EMAIL: priya.nair@example.com
+PHONE: 9123456780
+EXPERIENCE_YEARS: 0
+EDUCATION: B.Sc Physics, Kerala University, 2024
+SKILLS: Excel, PowerPoint, Basic Python, Communication
+PROJECTS: Analyzed lab experiment data using Excel for an undergraduate physics research project. Prepared presentation slides summarizing findings.
+SUMMARY: Physics graduate exploring a transition into technology roles, currently learning programming fundamentals.

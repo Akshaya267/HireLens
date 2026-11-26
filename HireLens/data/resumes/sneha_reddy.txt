@@ -1,0 +1,8 @@
+NAME: Sneha Reddy
+EMAIL: sneha.reddy@example.com
+PHONE: 9012345678
+EXPERIENCE_YEARS: 2
+EDUCATION: BCA, Osmania University, 2022
+SKILLS: Java, SQL, Database, Data Structures, Git, JavaScript
+PROJECTS: Developed a college event management system using Java and a relational database. Worked on a small team to build a JavaScript based frontend for an internal tool.
+SUMMARY: Backend focused developer with 2 years experience, comfortable with database management system design, working towards stronger cloud and agile exposure.
